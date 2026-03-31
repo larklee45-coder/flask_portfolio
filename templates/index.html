@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lark Lee | Developer Portfolio</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com" rel="stylesheet">
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        :root {
+            --bg-gradient: linear-gradient(135deg, #0f172a 50%, #1e293b 100%);
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg-gradient);
+            color: #e1e8ed;
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Scanline Overlay Effect */
+        body::before {
+            content: " ";
+            display: block;
+            position: fixed;
+            top: 0; left: 0; bottom: 0; right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%), 
+                        linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+            z-index: 100;
+            background-size: 100% 4px, 3px 100%;
+            pointer-events: none;
+        }
+
+        .font-orbitron { font-family: 'Orbitron', sans-serif; }
+        .font-mono-roboto { font-family: 'Roboto Mono', monospace; }
+
+        .glow-text {
+            text-shadow: 0 0 15px rgba(59, 130, 246, 0.6);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-5px);
+            border-color: #3b82f6;
+            box-shadow: 0 20px 40px rgba(70, 162, 238, 0.4);
+        }
+
+        /* Typing Cursor Blink */
+        @keyframes blink { 50% { border-color: transparent; } }
+        #typing-text { animation: blink 0.8s step-end infinite; }
+    </style>
+</head>
+<body class="leading-relaxed">
+
+    <!-- NAVIGATION -->
+    <header class="fixed top-0 w-full z-50 bg-slate-950/80 backdrop-blur-md border-b border-white/5 py-4">
+        <nav class="max-w-6xl mx-auto px-8 flex justify-between items-center">
+            <h1 class="font-orbitron text-xl font-bold tracking-tighter text-blue-400">LL.DEV</h1>
+            <div class="flex gap-8 font-mono-roboto text-sm uppercase">
+                <a href="#about" class="hover:text-blue-400 transition-colors">About</a>
+                <a href="#skills" class="hover:text-blue-400 transition-colors">Skills</a>
+                <a href="#projects" class="hover:text-blue-400 transition-colors">Projects</a>
+                <a href="#contact" class="hover:text-blue-400 transition-colors">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section id="hero" class="min-h-screen flex flex-col justify-center items-center text-center px-6 pt-20">
+            <h2 class="text-5xl md:text-8xl font-orbitron mb-6 text-white uppercase tracking-tighter glow-text">
+                Lark Lee
+            </h2>
+            <div class="h-10">
+                <p id="typing-text" class="text-xl md:text-3xl font-mono-roboto text-blue-400 border-r-4 border-blue-500 pr-2 inline-block">
+                </p>
+            </div>
+            <p class="mt-8 text-gray-400 max-w-xl text-lg">Building tools with Python and exploring the mechanics of interactive worlds.</p>
+            <div class="mt-12 flex gap-6">
+                <a href="#projects" class="bg-blue-600 hover:bg-blue-500 text-white px-10 py-4 rounded-xl font-orbitron font-bold transition-all shadow-lg shadow-blue-600/20">Init_Projects</a>
+                <a href="#contact" class="glass-card px-10 py-4 rounded-xl font-orbitron font-bold hover:bg-white/5 transition-all">Contact_Me</a>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section id="about" class="py-32 bg-slate-900/30">
+            <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-20 items-center px-8">
+                <div class="flex justify-center">
+                    <div class="relative group">
+                        <div class="absolute -inset-2 bg-blue-500/20 rounded-3xl blur-2xl group-hover:bg-blue-500/40 transition duration-1000"></div>
+                        <div class="relative w-72 h-72 md:w-96 md:h-96 bg-slate-800 rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
+                            <!-- ADD YOUR PHOTO HERE -->
+                            <img src="Me_blueprint.png" alt="Lark Lee" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" />
+                        </div>
+                    </div>
+                </div>
+                <div class="space-y-8">
+                    <h2 class="text-4xl font-orbitron text-blue-400 uppercase tracking-widest">System_Profile</h2>
+                    <p class="text-xl text-gray-300 leading-relaxed font-light">
+                        I am a self-taught <span class="text-blue-400 font-bold">Python Developer</span> focused on creating software that is both powerful and elegant. 
+                    </p>
+                    <p class="text-xl text-gray-300 font-light">
+                        With a deep interest in <span class="text-white font-bold">Game Development</span>, I bridge the gap between logical backend tools and creative gameplay mechanics. My mission is to build digital experiences that feel as good as they function.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS SECTION -->
+        <section id="skills" class="py-24 px-8 max-w-6xl mx-auto">
+            <h2 class="text-4xl text-center font-orbitron mb-16 uppercase tracking-widest glow-text">Tech_Stack</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="glass-card p-8 rounded-2xl">
+                    <i class="devicon-python-plain colored text-4xl mb-4"></i>
+                    <h3 class="font-orbitron text-lg mb-2">Python</h3>
+                    <div class="w-full bg-white/10 h-1 rounded-full"><div class="bg-blue-500 h-1 w-[85%]"></div></div>
+                </div>
+                <div class="glass-card p-8 rounded-2xl">
+                    <i class="devicon-unity-plain text-4xl mb-4"></i>
+                    <h3 class="font-orbitron text-lg mb-2">Unity / C#</h3>
+                    <div class="w-full bg-white/10 h-1 rounded-full"><div class="bg-blue-500 h-1 w-[60%]"></div></div>
+                </div>
+                <div class="glass-card p-8 rounded-2xl">
+                    <i class="devicon-sqlite-plain colored text-4xl mb-4"></i>
+                    <h3 class="font-orbitron text-lg mb-2">Databases</h3>
+                    <div class="w-full bg-white/10 h-1 rounded-full"><div class="bg-blue-500 h-1 w-[75%]"></div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS SECTION -->
+        <section id="projects" class="py-24 px-8 max-w-6xl mx-auto">
+            <h2 class="text-4xl text-center font-orbitron mb-16 uppercase tracking-widest glow-text">Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="glass-card p-8 rounded-2xl">
+                    <i class="devicon-python-plain colored text-4xl mb-4"></i>
+                    <h3 class="font-orbitron text-lg mb-2">Japan Travel Mapper</h3>
+                    <a href="https://larklee45-coder.github.io/Japan-Travel-app/" target="_blank" rel="noopener noreferrer" class="bg-blue-900 text-green-200 text-xs px-3 py-1 rounded-full mb-4 uppercase font-bold">Live Demo</a>
+                    <p class="text-gray-400 mb-4">A Python application that scrapes TripAdvisor data and visualizes it on an interactive map.</p>
+                    <div class="flex gap-2">
+                        <span class="bg-gray-200 text-black text-xs px-3 py-1 rounded-full">Python</span>
+                        <span class="bg-gray-200 text-black text-xs px-3 py-1 rounded-full">SQLite</span>
+                        <span class="bg-gray-200 text-black text-xs px-3 py-1 rounded-full">Folium</span>
+                        
+                    </div>
+                </div>
+                <div class="glass-card p-8 rounded-2xl">
+                    <i class="devicon-unity-plain text-4xl mb-4"></i>
+                    <h3 class="font-orbitron text-lg mb-2">GitHub Repository Analyzer</h3>
+                    <p class="text-gray-400 mb-4">A Python-based tool to visualize repo data via the GitHub API.</p>
+                    <span class="inline-block bg-yellow-900 text-yellow-200 text-xs px-3 py-1 rounded-full mb-4 uppercase font-bold">In Progress</span>
+                    <div class="flex gap-2">
+                        <span class="bg-gray-200 text-black text-xs px-3 py-1 rounded-full">Python</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="py-32 border-t border-white/5">
+            <div class="max-w-4xl mx-auto px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-orbitron text-blue-400 uppercase tracking-widest glow-text">Open_Transmission</h2>
+                    <p class="text-gray-400 font-mono-roboto mt-4">Send a message to initialize connection.</p>
+                </div>
+                <div class="glass-card p-10 md:p-16 rounded-[2rem] relative">
+                    <form action="#" class="space-y-8">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div class="space-y-2">
+                                <label class="text-xs font-orbitron text-blue-400 uppercase">User_ID</label>
+                                <input type="text" placeholder="Name" class="w-full bg-black/40 border border-white/10 rounded-xl px-5 py-4 focus:border-blue-500 outline-none transition-all">
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-xs font-orbitron text-blue-400 uppercase">Access_Email</label>
+                                <input type="email" placeholder="Email" class="w-full bg-black/40 border border-white/10 rounded-xl px-5 py-4 focus:border-blue-500 outline-none transition-all">
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-xs font-orbitron text-blue-400 uppercase">Data_Payload</label>
+                            <textarea rows="5" placeholder="Your Message..." class="w-full bg-black/40 border border-white/10 rounded-xl px-5 py-4 focus:border-blue-500 outline-none transition-all"></textarea>
+                        </div>
+                        <button class="w-full bg-blue-600 hover:bg-blue-500 text-white font-orbitron font-bold py-5 rounded-xl transition-all uppercase tracking-widest">Execute_Send</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="flex justify-end px-10 ">
+        <button class="bg-blue-600 rounded-xl px-3 py-3 text-3xl"> <a href="#hero">▲</a></button>
+
+    </div>
+    
+    <footer class="py-12 text-center text-gray-600 font-mono-roboto text-xs uppercase tracking-widest">
+        &copy; 2026 Lark Lee // Localhost Connection Established
+    </footer>
+
+    <!-- TYPING SCRIPT -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

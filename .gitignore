@@ -1,0 +1,17 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environments
+.venv/
+env/
+venv/
+ENV/
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Flask/Local secret keys
+.env
