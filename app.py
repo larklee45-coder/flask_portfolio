@@ -1,4 +1,5 @@
 import os
+import requests
 from flask import Flask, render_template, request
 
 app = Flask(__name__)
@@ -15,7 +16,17 @@ def contact():
 
     print(f"New message from{name}: {message}")
 
-    return "Message sent! I'll get back to you soon."
+    formspree_url = "https://formspree.io/f/your-form-id"  # Replace with your Formspree URL
+    data = {
+        "name": name,
+        "email": email,
+        "message": message
+    }
+    response = requests.post(formspree_url, data=data)
+    if response.status_code != 200:
+        return "Sorry, something went wrong. Please try again."
+    else:        
+        return "Thank you for your message! We will get back to you soon."
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
