@@ -14,9 +14,9 @@ def contact():
     email = request.form.get('email')
     message = request.form.get('message')
 
-    print(f"New message from{name}: {message}")
+    #print(f"New message from{name}: {message}")
 
-    formspree_url = "https://formspree.io/f/your-form-id"  # Replace with your Formspree URL
+    formspree_url = "https://formspree.io/f/mojpnprv"  # Replace with your Formspree URL
     data = {
         "name": name,
         "email": email,
